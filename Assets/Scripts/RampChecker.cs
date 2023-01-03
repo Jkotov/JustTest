@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,14 +8,16 @@ public class RampChecker : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (!col.collider.TryGetComponent(out Ramp ramp)) return;
+        if (!col.collider.TryGetComponent(out Ramp ramp))
+            return;
         rampCollisions++;
         onRamp?.Invoke(true);
     }
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        if (!col.collider.TryGetComponent(out Ramp ramp)) return;
+        if (!col.collider.TryGetComponent(out Ramp ramp))
+            return;
         rampCollisions--;
         if (rampCollisions == 0)
         {

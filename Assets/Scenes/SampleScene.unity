@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 671074430}
   - component: {fileID: 671074433}
   - component: {fileID: 671074434}
+  - component: {fileID: 671074435}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -535,6 +536,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newColor: {r: 0.9150943, g: 0, b: 0, a: 1}
+--- !u!114 &671074435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671074427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351aec97ad564c63ad1b7f3cafae9264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  publisher: {fileID: 962677569}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +662,9 @@ GameObject:
   - component: {fileID: 962677576}
   - component: {fileID: 962677578}
   - component: {fileID: 962677579}
+  - component: {fileID: 962677581}
+  - component: {fileID: 962677580}
+  - component: {fileID: 962677582}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (spineboy-pro)
   m_TagString: Untagged
@@ -669,43 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onRamp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 671074434}
-        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 962677575}
-        m_TargetAssemblyTypeName: SpineBoyAnimController, Assembly-CSharp
-        m_MethodName: ChangeIsOnHoverboardState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 962677577}
-        m_TargetAssemblyTypeName: MoveController, Assembly-CSharp
-        m_MethodName: DisableMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &962677570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,19 +935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 962677575}
-        m_TargetAssemblyTypeName: SpineBoyAnimController, Assembly-CSharp
-        m_MethodName: ChangeIsRunningState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
   speed: 5
 --- !u!50 &962677578
 Rigidbody2D:
@@ -1030,6 +999,45 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 3.2543814}
   m_Size: {x: 4.7145486, y: 6.6788898}
   m_Direction: 0
+--- !u!114 &962677580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962677568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca889d8cdde04df1a2246d489bc04f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  publisher: {fileID: 962677577}
+--- !u!114 &962677581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962677568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4a526ec07546cdbf866433061a05c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  publisher: {fileID: 962677569}
+--- !u!114 &962677582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962677568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e293aaaf937d4d238f3cedf6fe143ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  publisher: {fileID: 962677569}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
